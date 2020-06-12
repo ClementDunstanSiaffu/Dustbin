@@ -43,5 +43,5 @@ exports.bills = async (req,res)=>{
     const action = req.params;
     const user = await User.findOne(action)
     console.log(user)
-    res.send(`${user.bill}`+" "+'Tsh')
+    res.send(`${user.bill}`)
 }
