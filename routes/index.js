@@ -36,6 +36,7 @@ exports.measure = async (req,res)=>{
     user.bill = price;
     const user2 = await User.replaceOne(docs[index],user)
     console.log(user2)
+    res.send("weight has already been measured")
 } 
 
 exports.bills = async (req,res)=>{
