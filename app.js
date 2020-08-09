@@ -1,11 +1,13 @@
 
 require('./model/db')
 const express = require('express');
+var cors = require('cors');
 const app = express();
 const routes = require('./routes');
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.get('/:id',routes.auth);
 app.get('/:id/value/:weight',routes.measure);
 app.get('/:id/bill',routes.bills);
