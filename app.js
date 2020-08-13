@@ -11,6 +11,8 @@ app.use(cors());
 app.get('/:id',routes.auth);
 app.get('/:id/value/:weight',routes.measure);
 app.get('/:id/bill',routes.bills);
+app.post('/hakiki',routes.login);
+app.get('hizo',routes.getData);
 app.listen(PORT,()=>{
     console.log("listening to the port:" + PORT)
 })

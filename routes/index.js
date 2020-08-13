@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { findOne } = require('../model/stucture');
 const User = mongoose.model("USER")
 //const person = require('../model/stucture')
 exports.auth = async (req,res)=>{
@@ -44,4 +45,27 @@ exports.bills = async (req,res)=>{
     const user = await User.findOne(action)
     console.log(user)
     res.send(`${user.bill}`)
+}
+
+exports.login = async (req,res)=>{
+    const namba = req.body;
+    const user = await findOne(namba);
+
+    if(user){
+        res.redirect('http://localhost3000/first')
+    }else{
+       res.redirect('http://localhost:3000/login') 
+    }
+
+}
+
+exports.getData = async (req,res)=>{
+
+    User.find((err,docs)=>{
+        if(!err){
+            res.json(docs)
+        }else{
+            console.log("there is an error")
+        }
+    })
 }
