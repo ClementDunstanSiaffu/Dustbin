@@ -56,9 +56,9 @@ exports.login = async (req,res)=>{
     const user = await User.findOne(take);
     console.log(user)
     if(user){
-        res.redirect('http://localhost:3000/first')
+        res.redirect('https://garbage-collection.vercel.app/first')
     }else{
-       res.redirect('http://localhost:3000/login') 
+       res.redirect('https://garbage-collection.vercel.app/login') 
     }
 
 }
