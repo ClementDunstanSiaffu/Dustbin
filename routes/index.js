@@ -49,10 +49,11 @@ exports.bills = async (req,res)=>{
 
 exports.login = async (req,res)=>{
     const namba = req.body;
-    const user = await findOne(namba);
+    console.log(namba)
+    const user = await User.findOne(namba);
 
     if(user){
-        res.redirect('http://localhost3000/first')
+        res.redirect('http://localhost:3000/first')
     }else{
        res.redirect('http://localhost:3000/login') 
     }
